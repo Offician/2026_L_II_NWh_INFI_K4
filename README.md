@@ -9,8 +9,8 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
   # tworzymy hermetyczne środowisko dla bibliotek aplikacji:
   $ python -m venv .venv
 
-  # aktywowanie hermetycznego środowiska
-  $ source .venv/Source/activate
+  # aktywowanie hermetycznego środowiska na systemie Windows
+  $ (Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned) ; .\.venv\Scripts\Activate.ps1 
   $ pip install -r requirements.txt
   $ pip install -r test_requirements.txt
 
