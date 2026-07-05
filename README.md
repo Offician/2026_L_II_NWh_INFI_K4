@@ -51,8 +51,6 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
   ```
 
   ```
-  ...
-
   # aktywacja 
   $ (Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned) ; 
   .venv/Scripts/activate
