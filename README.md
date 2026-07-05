@@ -68,7 +68,7 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
 
 - Instalacja dockera: [docker howto](https://docs.docker.com/desktop/setup/install/windows-install/)
 - Instalacja `chocolatey`: [chocohowto](https://chocolatey.org/install)
-    - Aby zainstalować `makefile` na systemie `Windows` używamy narzędzia `chocolatey` - instalujemy komendą `choco install make` wywołaną przez PowerShell w trybie administratora.x
+    - Aby zainstalować `makefile` na systemie `Windows` używamy narzędzia `chocolatey` - instalujemy komendą `choco install make` wywołaną przez PowerShell w trybie administratora.
 
 ## Ubuntu
 
