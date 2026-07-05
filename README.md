@@ -66,6 +66,10 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
 
 # Pomocnicze
 
+## Windows
+
+- Instalacja dockera: [docker howto](https://docs.docker.com/desktop/setup/install/windows-install/)
+
 ## Ubuntu
 
 - Instalacja dockera: [dockerce howto](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
