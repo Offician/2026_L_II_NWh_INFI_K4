@@ -11,13 +11,12 @@ jobs:
       image: ubuntu-2004:current 
 
         
-
     steps: 
 
       - checkout 
 
       - run: make deps 
-
+      - run: make lint
       - run: make test       
 
 workflows: 
