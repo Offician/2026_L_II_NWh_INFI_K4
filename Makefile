@@ -31,7 +31,7 @@ TAG=$(USERNAME)/hello-world-printer-k4-2026
 
 docker_push: docker_build 
 
-	@echo "$$DOCKER_PASSWORD" | docker login --username $(USERNAME) --password-stdin
+	@echo '$(DOCKER_PASSWORD)' | docker login --username $(USERNAME) --password-stdin
 	docker tag hello-world-printer-k4-2026 $(TAG)
 	docker push $(TAG)
 	docker logout
