@@ -43,6 +43,13 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
   py.test --verbose -s
   ```
 
+- Uruchamianie testów (see: http://doc.pytest.org/en/latest/capture.html) dla systemu Linux:
+
+  ```
+  PYTHONPATH=. py.test
+  PYTHONPATH=. py.test --verbose -s
+  ```
+
 - Kontynuując pracę z projektem, aktywowanie hermetycznego środowiska dla aplikacji py:
 
   ```
@@ -50,10 +57,15 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
   $ deactivate
   ```
 
+- Aktywacja dla systemu Windows
   ```
-  # aktywacja 
   $ (Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned) ; 
   .venv/Scripts/activate
+  ```
+
+- Aktywacja dla systemu Linux
+  ```
+  source venv/bin/activate
   ```
 
 - Integracja z TravisCI:
