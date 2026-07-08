@@ -3,20 +3,29 @@
 Aplikacja Dydaktyczna wyświetlająca imię i wiadomość w różnych formatach dla zajęć
 o Continuous Integration, Continuous Delivery i Continuous Deployment.
 
-- W projekcie wykorzystamy virtual environment, dla utworzenia hermetycznego środowisko dla aplikacji:
+### W projekcie wykorzystamy virtual environment, do utworzenia hermetycznego środowiska aplikacji:
 
   ```
   # tworzymy hermetyczne środowisko dla bibliotek aplikacji:
   $ python -m venv .venv
-  
-  # Uwaga! Na windowsie musimy nadać procesowi uprawnienia do wykonywania skryptów, dla bezpieczeństwa zakres to będzie obecny proces
+  ```
+  - Aktywacja środowiska dla systemu Windows
+  ```
+  $ (Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned) ;  # Uwaga! Na windowsie musimy nadać procesowi uprawnienia do wykonywania skryptów
+  .venv/Scripts/activate
+  ```
 
-  # aktywowanie hermetycznego środowiska na systemie Windows
-  $ (Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned) ; .\.venv\Scripts\Activate.ps1 # przykład potrzeby nadania uprawnień
+  - Aktywacja środowiska dla systemu Linux
+  ```
+  source venv/bin/activate
+  ```
+
+  Instalacja bibliotek
+  ```
   $ pip install -r requirements.txt
   $ pip install -r test_requirements.txt
 
-  # zobacz
+  # zobacz zainstalowane biblioteki
   $ pip list
   ```
 
@@ -50,29 +59,16 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
   PYTHONPATH=. py.test --verbose -s
   ```
 
-- Kontynuując pracę z projektem, aktywowanie hermetycznego środowiska dla aplikacji py:
+- Kontynuując pracę z projektem, deaktywacja hermetycznego środowiska dla aplikacji py:
 
   ```
-  # deaktywacja
-  $ deactivate
+  deactivate
   ```
 
-- Aktywacja dla systemu Windows
-  ```
-  $ (Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned) ; 
-  .venv/Scripts/activate
-  ```
-
-- Aktywacja dla systemu Linux
-  ```
-  source venv/bin/activate
-  ```
-
-- Integracja z TravisCI:
-
-  ```
-  # miejsce na twoje notatki
-  ```
+- Integracja z CircleCI:
+  - Projekt jest podpięty pod system CircleCI. Po każdym pushu wykonywane są testy oraz sprawdzana jest poprawność kodu.
+  - Po tym następuje zbudowanie oraz pushnięcie obrazu do DockerHub
+  
 
 # Pomocnicze
 
@@ -85,25 +81,3 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
 ## Ubuntu
 
 - Instalacja dockera: [dockerce howto](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-
-## Centos
-
-- Instalacja docker-a:
-
-  ```
-  $ yum remove docker \
-        docker-common \
-        container-selinux \
-        docker-selinux \
-        docker-engine
-
-  $ yum install -y yum-utils
-
-  $ yum-config-manager \
-      --add-repo \
-      https://download.docker.com/linux/centos/docker-ce.repo
-
-  $ yum makecache fast
-  $ yum install -y docker-ce
-  $ systemctl start docker
-  ```
